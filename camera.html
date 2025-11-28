@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Camera Test</title>
+</head>
+<body>
+  <h1>ブラウザでカメラ入力テスト</h1>
+  <video id="video" autoplay playsinline width="400"></video>
+
+  <script>
+    // カメラ映像を取得
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        document.getElementById("video").srcObject = stream;
+      })
+      .catch(err => {
+        console.error("カメラ取得エラー:", err);
+      });
+  </script>
+</body>
+</html>
