@@ -8,16 +8,17 @@
   <h1>ブラウザでカメラ入力テスト</h1>
   <video id="video" autoplay playsinline controls width="400"></video>
 
-  <script>
+<script>
     // カメラ映像を取得
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(stream => {
-        document.getElementById("video").srcObject = stream;
-      })
-      .catch(err => {
-        console.error("カメラ取得エラー:", err);
-      });
-  </script>
+      document.getElementById("video").srcObject = stream;
+    })
+    .catch(err => {
+        alert("カメラ取得エラー: " + err.name + " - " + err.message);
+    });
+</script>
 </body>
 </html>
+
 
